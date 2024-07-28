@@ -11,17 +11,29 @@ function AllPosts() {
     }
   });
   return (
+    // <div className="w-full py-8">
+    //   <Container>
+    //     <div className="flex justify-center flex-wrap  gap-x-4 gap-y-4  ">
+    //       {posts.map((post) => (
+    //         <div key={post.$id} className="flex   md:w-[30%] ">
+    //           <PostCard {...post} />
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </Container>
+    // </div>
     <div className="w-full py-8">
-      <Container>
-        <div className="flex justify-center flex-wrap  gap-x-4 gap-y-4  ">
-          {posts.map((post) => (
-            <div key={post.$id} className="flex   md:w-[30%] ">
-              <PostCard {...post} />
-            </div>
-          ))}
+  <Container>
+    <div className="flex justify-center flex-wrap gap-4">
+      {posts.map((post) => (
+        <div key={post.$id} className="flex w-full sm:w-[48%] md:w-[30%]">
+          <PostCard {...post} />
         </div>
-      </Container>
+      ))}
     </div>
+  </Container>
+</div>
+
   );
 }
 

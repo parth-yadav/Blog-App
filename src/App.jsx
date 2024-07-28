@@ -32,7 +32,7 @@ function App() {
         <Footer />
       </div>
     </div>
-  ) : null
+  ) : <h1>Loading</h1>
 }
 
 export default App

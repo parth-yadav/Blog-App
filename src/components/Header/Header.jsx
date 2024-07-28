@@ -38,37 +38,71 @@ function Header() {
   ]
 
 
-  return (
-    <header className="flex gap-5 justify-between w-full text-sm whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-      <Container>
-        <nav className='flex gap-5 self-start mt-1 leading-[143%] text-slate-900'>
-          <div className='mr-4'>
-            <Link to='/'>
-              <Logo width='70px'   />
+//   return (
+//     <header className="flex gap-5 justify-between w-full text-sm whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+//       <Container>
+//         <nav className='flex gap-5 self-start mt-1 leading-[143%] text-slate-900'>
+//           <div className='mr-4'>
+//             <Link to='/'>
+//               <Logo width='70px'   />
 
-              </Link>
-          </div>
-          <ul className='flex ml-auto gap-2'>
-            {navItems.map((item) => 
+//               </Link>
+//           </div>
+//           <ul className='flex ml-auto gap-2'>
+//             {navItems.map((item) => 
+//             item.active ? (
+//               <li key={item.name}>
+//                 <button
+//                 onClick={() => navigate(item.slug)}
+//                 className='px-4 py-2 rounded-md border border-solid hover:bg-orange-200 border-slate-500 text-black text-lg'
+//                 >{item.name}</button>
+//               </li>
+//             ) : null
+//             )}
+//             {authStatus && (
+//               <li>
+//                 <LogoutBtn />
+//               </li>
+//             )}
+//           </ul>
+//         </nav>
+//         </Container>
+//     </header>
+//   )
+// }
+
+return (
+  <header className="w-full text-sm">
+    <Container>
+      <nav className="flex gap-5 justify-between items-center flex-wrap max-w-full">
+        <div className="flex items-center gap-4">
+          <Link to='/'>
+            <Logo width='70px' />
+          </Link>
+        </div>
+        <ul className="flex gap-2 flex-wrap">
+          {navItems.map((item) =>
             item.active ? (
               <li key={item.name}>
                 <button
-                onClick={() => navigate(item.slug)}
-                className='px-4 py-2 rounded-md border border-solid border-slate-500 text-slate-900'
-                >{item.name}</button>
+                  onClick={() => navigate(item.slug)}
+                  className="px-4 py-2 rounded-md border border-solid hover:bg-orange-200 border-slate-500 text-black text-lg"
+                >
+                  {item.name}
+                </button>
               </li>
             ) : null
-            )}
-            {authStatus && (
-              <li>
-                <LogoutBtn />
-              </li>
-            )}
-          </ul>
-        </nav>
-        </Container>
-    </header>
-  )
+          )}
+          {authStatus && (
+            <li>
+              <LogoutBtn />
+            </li>
+          )}
+        </ul>
+      </nav>
+    </Container>
+  </header>
+);
 }
 
 export default Header
